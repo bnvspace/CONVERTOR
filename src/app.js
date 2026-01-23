@@ -3,6 +3,7 @@ const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
 const routes = require('./routes');
+const bot = require('./bot');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -24,4 +25,13 @@ app.get('/', (req, res) => {
 // Start Server
 app.listen(PORT, () => {
     console.log(`Server running on port ${PORT}`);
+
+    // Start Bot
+    bot.launch()
+        .then(() => console.log('[Bot] Started'))
+        .catch((err) => console.error('[Bot] Start failed:', err));
+
+    // Graceful stop
+    process.once('SIGINT', () => bot.stop('SIGINT'));
+    process.once('SIGTERM', () => bot.stop('SIGTERM'));
 });

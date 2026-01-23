@@ -71,7 +71,7 @@
 ## 9. Configuration
 *   **Method**: `.env` file (dotenv).
 *   **Keys**:
-    *   `PORT` (default: 3000)
+    *   `PORT` (default: 3001)
     *   `TELEGRAM_BOT_TOKEN`
     *   `TEMP_DIR` (default: ./uploads)
 

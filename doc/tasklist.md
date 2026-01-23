@@ -3,8 +3,8 @@
 | Iteration | Status | Goals |
 | :--- | :---: | :--- |
 | **1. Foundation** | 🟢 | Core Server & Converter Logic |
-| **2. Web Interface** | 🔴 | Browser Upload & Conversion |
-| **3. Telegram Bot** | 🔴 | Bot Integration |
+| **2. Web Interface** | 🟢 | Browser Upload & Conversion |
+| **3. Telegram Bot** | 🟢 | Bot Integration |
 
 ---
 
@@ -24,13 +24,13 @@
     - Setup `src/routes.js` with `multer` for uploads.
     - Create `POST /api/convert` endpoint.
     - **Test**: Send POST request via Curl/Postman -> receive converted file.
-- [ ] **4. Frontend Implementation**
+- [x] **4. Frontend Implementation**
     - Create `public/index.html` (Simple form).
     - Create `public/script.js` (Fetch API logic).
     - **Test**: Open browser, upload file, verify automatic download.
 
 ## III. Telegram Integration
-- [ ] **5. Bot Connection**
+- [x] **5. Bot Connection**
     - Config `Telegraf` in `src/bot.js`.
     - Hook into `src/app.js`.
     - **Test**: Send `/start` to bot -> receive welcome message.

@@ -1,10 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
+
 <head>
     <meta charset="UTF-8">
-    <title>Convertor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конвертер Файлов</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    <h1>Server is OK</h1>
+    <div class="container">
+        <h1>Конвертер</h1>
+        <form id="convertForm">
+            <div class="upload-box" id="dropZone">
+                <p>Перетащите файл сюда или нажмите для выбора</p>
+                <input type="file" id="fileInput" name="file" accept="image/gif" hidden required>
+                <p id="fileName" class="file-name"></p>
+            </div>
+
+            <div class="controls">
+                <label for="format">В какой формат:</label>
+                <select id="format" name="format">
+                    <option value="png" selected>PNG</option>
+                    <option value="jpg">JPG</option>
+                    <option value="webp">WEBP</option>
+                </select>
+            </div>
+
+            <button type="submit" id="submitBtn">Конвертировать</button>
+        </form>
+        <div id="status" class="status"></div>
+    </div>
+    <script src="script.js"></script>
 </body>
+
 </html>
