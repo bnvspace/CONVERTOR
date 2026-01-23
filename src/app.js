@@ -2,6 +2,7 @@ require('dotenv').config();
 const express = require('express');
 const morgan = require('morgan');
 const path = require('path');
+const routes = require('./routes');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -11,6 +12,9 @@ app.use(morgan('dev'));
 
 // Static files
 app.use(express.static(path.join(__dirname, '../public')));
+
+// API Routes
+app.use('/api', routes);
 
 // Basic Route for testing
 app.get('/', (req, res) => {

@@ -7,6 +7,8 @@
 *   Select the next unchecked item in `doc/tasklist.md`.
 *   Read the task description and acceptance criteria (Test step).
 
+> **Important**: ALL status updates, reports, and reasoning must be in **Russian**.
+
 ## 2. Implementation Cycle
 1.  **Code**: Implement the feature following `conventions.md`.
 2.  **Verify**: Run the specified **Test** command from the task list.

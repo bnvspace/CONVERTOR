@@ -20,7 +20,7 @@
     - **Test**: Run standalone script to convert a test `sample.gif` -> `sample.png`.
 
 ## II. Web Interface (MVP)
-- [ ] **3. API Implementation**
+- [x] **3. API Implementation**
     - Setup `src/routes.js` with `multer` for uploads.
     - Create `POST /api/convert` endpoint.
     - **Test**: Send POST request via Curl/Postman -> receive converted file.

@@ -14,7 +14,12 @@
 *   **No Database (MVP)**: Stateless operation. Files are processed and cleaned up; no long-term storage or user accounts.
 *   **Monolith**: Single server process handles both Web API and Telegram Polling/Webhook.
 
-## 3. Project Structure
+## 3. Principles of work with LLM
+*   **Language**: The agent communicates, reasons, and writes documentation ONLY in Russian.
+*   **No English**: Avoid English comments and identifiers unless absolutely necessary (e.g. standard library names).
+
+
+## 4. Project Structure
 ```text
 /
 ├── public/              # Static Web Assets
@@ -30,12 +35,12 @@
 └── README.md
 ```
 
-## 4. Architecture (Simplified Layered)
+## 5. Architecture (Simplified Layered)
 1.  **Presentation API**: Express Routes & Telegraf Commands.
 2.  **Service Layer**: `converter.js` (Pure logic, unaware of transport).
 3.  **Infrastructure**: Local File System (Read/Write/Verify).
 
-## 5. Data Model (In-Memory)
+## 6. Data Model (In-Memory)
 *   **ConversionJob**: Transient object used during processing.
     ```javascript
     {
@@ -47,7 +52,7 @@
     }
     ```
 
-## 6. Scenarios (Happy Paths)
+## 7. Scenarios (Happy Paths)
 *   **Web Client**:
     1.  User drags file -> `POST /api/upload`.
     2.  User selects format & clicks "Convert" -> `POST /api/convert`.
@@ -59,17 +64,17 @@
     4.  Conversion logic runs.
     5.  Bot uploads result back to user.
 
-## 7. Deployment
+## 8. Deployment
 *   **Dev**: `npm start`
 *   **Prod**: `pm2 start src/app.js` or simple process manager. No complex CI/CD.
 
-## 8. Configuration
+## 9. Configuration
 *   **Method**: `.env` file (dotenv).
 *   **Keys**:
     *   `PORT` (default: 3000)
     *   `TELEGRAM_BOT_TOKEN`
     *   `TEMP_DIR` (default: ./uploads)
 
-## 9. Logging
+## 10. Logging
 *   **Console**: Standard `console.log` / `console.error`.
 *   **HTTP**: `morgan` middleware for request logging.
