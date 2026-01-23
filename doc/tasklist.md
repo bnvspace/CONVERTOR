@@ -2,7 +2,7 @@
 
 | Iteration | Status | Goals |
 | :--- | :---: | :--- |
-| **1. Foundation** | 🔴 | Core Server & Converter Logic |
+| **1. Foundation** | 🟢 | Core Server & Converter Logic |
 | **2. Web Interface** | 🔴 | Browser Upload & Conversion |
 | **3. Telegram Bot** | 🔴 | Bot Integration |
 
@@ -15,7 +15,7 @@
     - Setup Express app in `src/app.js`.
     - Configure `morgan` logging.
     - **Test**: Run `npm start`, access `http://localhost:3000` -> returns "OK".
-- [ ] **2. Core Converter Logic**
+- [x] **2. Core Converter Logic**
     - Implement `src/converter.js` (GIF -> PNG) using `sharp`.
     - **Test**: Run standalone script to convert a test `sample.gif` -> `sample.png`.
 
