@@ -8,9 +8,9 @@ const fs = require('fs');
  * @param {string} format - Target format (e.g., 'png', 'jpg')
  * @returns {Promise<string>} - Absolute path to the output file
  */
-async function convertFile(inputPath, format = 'png') {
+async function convertFile(inputPath, format = 'png', customOutputFilename = null) {
     try {
-        const outputFilename = `converted-${Date.now()}.${format}`;
+        const outputFilename = customOutputFilename || `converted-${Date.now()}.${format}`;
         const outputPath = path.join(path.dirname(inputPath), outputFilename);
 
         console.log(`[Converter] Processing: ${inputPath} -> ${format}`);

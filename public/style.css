@@ -3,7 +3,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f0f2f5;
     margin: 0;
 }
@@ -12,23 +12,46 @@ body {
     background: white;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     text-align: center;
-    width: 300px;
+    width: 400px;
+    max-height: 90vh;
+    overflow-y: auto;
 }
 
 .upload-box {
     border: 2px dashed #ccc;
-    padding: 2rem;
+    padding: 3rem;
     cursor: pointer;
     margin-bottom: 1rem;
     border-radius: 4px;
     transition: border-color 0.3s;
+    min-height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    transition: border-color 0.3s;
 }
 
-.upload-box:hover, .upload-box.dragover {
+.upload-box:hover,
+.upload-box.dragover {
     border-color: #007bff;
     background-color: #f8f9fa;
+}
+
+.file-list {
+    text-align: left;
+    margin-top: 10px;
+    font-size: 0.9em;
+    color: #555;
+}
+
+.file-list ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 select {
@@ -49,4 +72,44 @@ button {
 
 button:disabled {
     background-color: #ccc;
+}
+
+.results {
+    margin-top: 1.5rem;
+    border-top: 1px solid #eee;
+    padding-top: 1rem;
+}
+
+.download-list {
+    text-align: left;
+    margin-bottom: 1rem;
+}
+
+.download-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+}
+
+.btn-download {
+    text-decoration: none;
+    background: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+}
+
+.btn-download.main-zip {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    font-size: 1rem;
+    background: #17a2b8;
+    margin-top: 10px;
+    box-sizing: border-box;
 }

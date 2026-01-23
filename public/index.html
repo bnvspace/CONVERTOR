@@ -6,16 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Конвертер Файлов</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="/favicon.ico?v=2" type="image/x-icon">
 </head>
 
 <body>
     <div class="container">
         <h1>Конвертер</h1>
-        <form id="convertForm">
+        <form id="convertForm" novalidate>
             <div class="upload-box" id="dropZone">
-                <p>Перетащите файл сюда или нажмите для выбора</p>
-                <input type="file" id="fileInput" name="file" accept="image/gif" hidden required>
-                <p id="fileName" class="file-name"></p>
+                <p>Перетащите файлы сюда или нажмите для выбора</p>
+                <input type="file" id="fileInput" name="files" accept="image/gif,image/png,image/jpeg" multiple hidden>
+                <div id="fileList" class="file-list"></div>
             </div>
 
             <div class="controls">
@@ -30,6 +31,7 @@
             <button type="submit" id="submitBtn">Конвертировать</button>
         </form>
         <div id="status" class="status"></div>
+        <div id="results" class="results"></div>
     </div>
     <script src="script.js"></script>
 </body>
